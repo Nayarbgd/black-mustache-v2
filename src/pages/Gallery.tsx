@@ -7,8 +7,6 @@ const images = [
   { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', category: 'haircut', alt: 'Premium haircut at Black Mustache Dubai' },
   { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', category: 'beard', alt: 'Expert beard grooming in JVC Dubai' },
   { src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80', category: 'haircut', alt: 'Skin fade haircut Dubai barbershop' },
-  { src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80', category: 'beard', alt: 'Beard trim and shape at Black Mustache' },
-  { src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80', category: 'beard', alt: 'Hot towel shave premium barbershop' },
   { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636127/Gemini_Generated_Image_hc7kwehc7kwehc7k_ehso6l.png', category: 'interior', alt: 'Black Mustache Gents Salon ambience Dubai' },
   { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636103/2026-06-05_06h50_46_p7jkfy.png', category: 'haircut', alt: 'Premium haircut service at Black Mustache JVC' },
   { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636105/2026-06-05_06h51_34_ydsj7f.png', category: 'transformation', alt: 'Grooming transformation at Black Mustache Dubai' },
