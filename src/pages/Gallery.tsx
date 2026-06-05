@@ -4,31 +4,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', category: 'haircut', alt: 'Premium haircut at Black Mustache Dubai' },
-  { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', category: 'beard', alt: 'Expert beard grooming in JVC Dubai' },
-  { src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80', category: 'haircut', alt: 'Skin fade haircut Dubai barbershop' },
-  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636127/Gemini_Generated_Image_hc7kwehc7kwehc7k_ehso6l.png', category: 'interior', alt: 'Black Mustache Gents Salon ambience Dubai' },
-  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636103/2026-06-05_06h50_46_p7jkfy.png', category: 'haircut', alt: 'Premium haircut service at Black Mustache JVC' },
-  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636105/2026-06-05_06h51_34_ydsj7f.png', category: 'transformation', alt: 'Grooming transformation at Black Mustache Dubai' },
-]
-
-const categories = [
-  { key: 'all', label: 'All' },
-  { key: 'haircut', label: 'Haircuts' },
-  { key: 'beard', label: 'Beard Work' },
-  { key: 'interior', label: 'Salon' },
-  { key: 'transformation', label: 'Transformations' },
+  { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', alt: 'Premium haircut at Black Mustache Dubai' },
+  { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', alt: 'Expert beard grooming in JVC Dubai' },
+  { src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80', alt: 'Skin fade haircut Dubai barbershop' },
+  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636127/Gemini_Generated_Image_hc7kwehc7kwehc7k_ehso6l.png', alt: 'Black Mustache Gents Salon ambience Dubai' },
+  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636103/2026-06-05_06h50_46_p7jkfy.png', alt: 'Premium haircut service at Black Mustache JVC' },
+  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636105/2026-06-05_06h51_34_ydsj7f.png', alt: 'Grooming transformation at Black Mustache Dubai' },
 ]
 
 export default function Gallery() {
-  const [activeCategory, setActiveCategory] = useState('all')
   const [lightbox, setLightbox] = useState<number | null>(null)
-
-  const filtered = activeCategory === 'all' ? images : images.filter(i => i.category === activeCategory)
 
   const navigate = (dir: 1 | -1) => {
     if (lightbox === null) return
-    setLightbox((lightbox + dir + filtered.length) % filtered.length)
+    setLightbox((lightbox + dir + images.length) % images.length)
   }
 
   return (
@@ -52,25 +41,9 @@ export default function Gallery() {
 
         <section className="bg-black py-12 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="flex gap-3 flex-wrap justify-center mb-10">
-              {categories.map(c => (
-                <button
-                  key={c.key}
-                  onClick={() => setActiveCategory(c.key)}
-                  className={`px-5 py-2 text-xs tracking-widest uppercase rounded border transition-all duration-300 ${
-                    activeCategory === c.key
-                      ? 'bg-gold text-black border-gold font-bold'
-                      : 'border-gold/30 text-gray-400 hover:border-gold/60 hover:text-gold'
-                  }`}
-                >
-                  {c.label}
-                </button>
-              ))}
-            </div>
-
             <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-3">
               <AnimatePresence>
-                {filtered.map((img, i) => (
+                {images.map((img, i) => (
                   <motion.div
                     key={img.src}
                     layout
@@ -118,8 +91,8 @@ export default function Gallery() {
               key={lightbox}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              src={filtered[lightbox].src}
-              alt={filtered[lightbox].alt}
+              src={images[lightbox].src}
+              alt={images[lightbox].alt}
               className="max-w-3xl w-full max-h-[85vh] object-contain rounded"
               onClick={(e) => e.stopPropagation()}
             />
