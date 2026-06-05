@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useLanguage } from '../context/LanguageContext'
 
 const images = [
   { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', category: 'haircut', alt: 'Premium haircut at Black Mustache Dubai' },
@@ -16,10 +15,15 @@ const images = [
   { src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80', category: 'beard', alt: 'Hot towel shave premium barbershop' },
 ]
 
-const categories = ['all', 'haircut', 'beard', 'interior', 'transformation']
+const categories = [
+  { key: 'all', label: 'All' },
+  { key: 'haircut', label: 'Haircuts' },
+  { key: 'beard', label: 'Beard Work' },
+  { key: 'interior', label: 'Salon' },
+  { key: 'transformation', label: 'Transformations' },
+]
 
 export default function Gallery() {
-  const { t } = useLanguage()
   const [activeCategory, setActiveCategory] = useState('all')
   const [lightbox, setLightbox] = useState<number | null>(null)
 
@@ -27,19 +31,7 @@ export default function Gallery() {
 
   const navigate = (dir: 1 | -1) => {
     if (lightbox === null) return
-    const newIdx = (lightbox + dir + filtered.length) % filtered.length
-    setLightbox(newIdx)
-  }
-
-  const categoryLabel = (c: string) => {
-    const map: Record<string, [string, string]> = {
-      all: ['All', 'Todos'],
-      haircut: ['Haircuts', 'Cortes'],
-      beard: ['Beard Work', 'Barba'],
-      interior: ['Salon', 'Salón'],
-      transformation: ['Transformations', 'Transformaciones'],
-    }
-    return t(map[c][0], map[c][1])
+    setLightbox((lightbox + dir + filtered.length) % filtered.length)
   }
 
   return (
@@ -53,34 +45,32 @@ export default function Gallery() {
       <div className="pt-20">
         <section className="bg-charcoal py-20 px-4 text-center">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gold text-xs tracking-widest uppercase mb-3">
-            {t('Our Work', 'Nuestro Trabajo')}
+            Our Work
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-serif text-4xl md:text-5xl text-white mb-4">
-            {t('The ', 'La ')}<span className="text-gold">{t('Gallery', 'Galería')}</span>
+            The <span className="text-gold">Gallery</span>
           </motion.h1>
           <div className="w-16 h-0.5 bg-gold mx-auto" />
         </section>
 
         <section className="bg-black py-12 px-4">
           <div className="max-w-7xl mx-auto">
-            {/* Filter tabs */}
             <div className="flex gap-3 flex-wrap justify-center mb-10">
               {categories.map(c => (
                 <button
-                  key={c}
-                  onClick={() => setActiveCategory(c)}
+                  key={c.key}
+                  onClick={() => setActiveCategory(c.key)}
                   className={`px-5 py-2 text-xs tracking-widest uppercase rounded border transition-all duration-300 ${
-                    activeCategory === c
+                    activeCategory === c.key
                       ? 'bg-gold text-black border-gold font-bold'
                       : 'border-gold/30 text-gray-400 hover:border-gold/60 hover:text-gold'
                   }`}
                 >
-                  {categoryLabel(c)}
+                  {c.label}
                 </button>
               ))}
             </div>
 
-            {/* Grid */}
             <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-3">
               <AnimatePresence>
                 {filtered.map((img, i) => (
@@ -107,7 +97,6 @@ export default function Gallery() {
         </section>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div

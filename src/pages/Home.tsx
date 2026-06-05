@@ -2,11 +2,8 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Phone, ChevronRight, Clock, Award, Scissors, Shield, MessageCircle, MapPin } from 'lucide-react'
-import { useLanguage } from '../context/LanguageContext'
 
-const WA_NUMBER = '97145896390'
-const WA_EN = `https://wa.me/${WA_NUMBER}?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
-const WA_ES = `https://wa.me/${WA_NUMBER}?text=Hola%20Black%20Mustache%20Gents%20Salon%2C%0A%0AMe%20gustar%C3%ADa%20reservar%20una%20cita.%0A%0ANombre%3A%0AServicio%3A%0AFecha%3A%0AHora%3A%0A%0AGracias.`
+const WA_LINK = `https://wa.me/97145896390?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
 
 const services = [
   { name: 'Signature Haircut', price: 'AED 60+', duration: '45 min' },
@@ -16,9 +13,6 @@ const services = [
 ]
 
 export default function Home() {
-  const { lang, t } = useLanguage()
-  const waLink = lang === 'es' ? WA_ES : WA_EN
-
   return (
     <>
       <Helmet>
@@ -45,7 +39,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-gold text-sm font-semibold tracking-widest uppercase mb-6"
           >
-            {t('Jumeirah Village Circle, Dubai • Premium Gents Salon', 'Jumeirah Village Circle, Dubai • Salón Premium de Caballeros')}
+            Jumeirah Village Circle, Dubai &bull; Premium Gents Salon
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -53,9 +47,9 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6"
           >
-            {t('More Than A Haircut.', 'Más Que Un Corte.')}
+            More Than A Haircut.
             <br />
-            <span className="text-gold">{t('A Statement.', 'Una Declaración.')}</span>
+            <span className="text-gold">A Statement.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -63,10 +57,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10"
           >
-            {t(
-              "Dubai's premium grooming experience at Emerald Tower, JVC. Walk in as a man. Walk out as a legend.",
-              'La experiencia premium de grooming en Dubai, Emerald Tower, JVC. Entra como hombre. Sal como leyenda.'
-            )}
+            Dubai's premium grooming experience at Emerald Tower, JVC. Walk in as a man. Walk out as a legend.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,20 +66,20 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href={waLink}
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-gold text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold-light transition-all duration-300 rounded"
             >
               <MessageCircle size={16} />
-              {t('Book via WhatsApp', 'Reservar por WhatsApp')}
+              Book via WhatsApp
             </a>
             <a
               href="tel:+97145896390"
               className="inline-flex items-center justify-center gap-2 border border-gold text-gold font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold/10 transition-all duration-300 rounded"
             >
               <Phone size={16} />
-              {t('Call Now', 'Llamar Ahora')}
+              Call Now
             </a>
           </motion.div>
           <motion.p
@@ -106,24 +97,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof / Credibility */}
+      {/* Credibility */}
       <section className="bg-charcoal py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gold text-xs tracking-widest uppercase mb-3">{t('Trusted by Dubai Gentlemen', 'La Confianza de los Caballeros de Dubai')}</p>
+          <p className="text-gold text-xs tracking-widest uppercase mb-3">Trusted by Dubai Gentlemen</p>
           <h2 className="font-serif text-2xl md:text-3xl text-white mb-4">
-            {t('Professional Grooming in the Heart of JVC', 'Grooming Profesional en el Corazón de JVC')}
+            Professional Grooming in the Heart of JVC
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed mb-10">
-            {t(
-              'Professional grooming, premium service, and attention to detail inside Emerald Tower, Jumeirah Village Circle. Your go-to barber shop for every occasion.',
-              'Grooming profesional, servicio premium y atención al detalle en Emerald Tower, Jumeirah Village Circle. Tu barbería de confianza para cada ocasión.'
-            )}
+            Professional grooming, premium service, and attention to detail inside Emerald Tower, Jumeirah Village Circle. Your go-to barber shop for every occasion.
           </p>
           <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto">
             {[
-              { value: '200+', label: t('Happy Clients', 'Clientes Felices') },
-              { value: '8+', label: t('Services Offered', 'Servicios Ofrecidos') },
-              { value: '7', label: t('Days a Week', 'Días a la Semana') },
+              { value: '200+', label: 'Happy Clients' },
+              { value: '8+', label: 'Services Offered' },
+              { value: '7', label: 'Days a Week' },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <p className="font-serif text-3xl text-gold font-bold">{value}</p>
@@ -139,16 +127,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">
-              {t('Why Choose ', 'Por Qué Elegir ')}<span className="text-gold">{t('Black Mustache', 'Black Mustache')}</span>
+              Why Choose <span className="text-gold">Black Mustache</span>
             </h2>
             <div className="w-16 h-0.5 bg-gold mx-auto" />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Scissors, title: t('Expert Barbers', 'Barberos Expertos'), desc: t('Years of mastery in classic and modern techniques.', 'Años de maestría en técnicas clásicas y modernas.') },
-              { icon: Award, title: t('Luxury Experience', 'Experiencia de Lujo'), desc: t('Every detail crafted for an exceptional grooming ritual.', 'Cada detalle diseñado para un ritual excepcional.') },
-              { icon: Clock, title: t('On Your Time', 'A Tu Hora'), desc: t('Flexible scheduling. Book easily via WhatsApp or call.', 'Horarios flexibles. Reserva por WhatsApp o llamada.') },
-              { icon: Shield, title: t('Premium Hygiene', 'Higiene Premium'), desc: t('Hospital-grade sterilization and single-use tools.', 'Esterilización de grado hospitalario y herramientas de un solo uso.') },
+              { icon: Scissors, title: 'Expert Barbers', desc: 'Years of mastery in classic and modern techniques.' },
+              { icon: Award, title: 'Luxury Experience', desc: 'Every detail crafted for an exceptional grooming ritual.' },
+              { icon: Clock, title: 'On Your Time', desc: 'Flexible scheduling. Book easily via WhatsApp or call.' },
+              { icon: Shield, title: 'Premium Hygiene', desc: 'Hospital-grade sterilization and single-use tools.' },
             ].map(({ icon: Icon, title, desc }) => (
               <motion.div
                 key={title}
@@ -173,7 +161,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">
-              {t('Our ', 'Nuestros ')}<span className="text-gold">{t('Signature Services', 'Servicios Signature')}</span>
+              Our <span className="text-gold">Signature Services</span>
             </h2>
             <div className="w-16 h-0.5 bg-gold mx-auto" />
           </div>
@@ -194,7 +182,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Link to="/services" className="inline-flex items-center gap-2 text-gold border border-gold px-6 py-3 text-sm tracking-wider hover:bg-gold/10 transition-colors rounded">
-              {t('View All Services', 'Ver Todos los Servicios')} <ChevronRight size={16} />
+              View All Services <ChevronRight size={16} />
             </Link>
           </div>
         </div>
@@ -204,10 +192,10 @@ export default function Home() {
       <section className="bg-gold py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-black font-bold mb-4">
-            {t('Ready to Elevate Your Look?', '¿Listo Para Elevar Tu Imagen?')}
+            Ready to Elevate Your Look?
           </h2>
           <p className="text-black/70 mb-2">
-            {t("Book your appointment today and experience Dubai's finest grooming.", 'Reserva tu cita hoy y experimenta el mejor grooming de Dubai.')}
+            Book your appointment today and experience Dubai's finest grooming.
           </p>
           <p className="text-black/50 text-sm mb-8 flex items-center justify-center gap-1.5">
             <MapPin size={13} />
@@ -215,13 +203,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={waLink}
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-black text-gold font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-charcoal transition-colors rounded"
             >
               <MessageCircle size={16} />
-              {t('Book via WhatsApp', 'Reservar por WhatsApp')}
+              Book via WhatsApp
             </a>
             <a
               href="tel:+97145896390"

@@ -1,25 +1,16 @@
 import { Link } from 'react-router-dom'
 import { Phone, MapPin, Instagram, MessageCircle, ExternalLink } from 'lucide-react'
-import { useLanguage } from '../context/LanguageContext'
 
-const WA_NUMBER = '97145896390'
-const WA_EN = `https://wa.me/${WA_NUMBER}?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
-const WA_ES = `https://wa.me/${WA_NUMBER}?text=Hola%20Black%20Mustache%20Gents%20Salon%2C%0A%0AMe%20gustar%C3%ADa%20reservar%20una%20cita.%0A%0ANombre%3A%0AServicio%3A%0AFecha%3A%0AHora%3A%0A%0AGracias.`
+const WA_LINK = `https://wa.me/97145896390?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
 
 export default function Footer() {
-  const { lang, t } = useLanguage()
-  const waLink = lang === 'es' ? WA_ES : WA_EN
-
   return (
     <footer className="bg-black border-t border-gold/20 py-16 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
           <h3 className="font-serif text-2xl text-gold font-bold mb-4">BLACK MUSTACHE</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-2">
-            {t(
-              "Dubai's premier gents salon in Jumeirah Village Circle. Where precision meets luxury grooming.",
-              'El salón de caballeros premium de Dubai en Jumeirah Village Circle. Donde la precisión se une al grooming de lujo.'
-            )}
+            Dubai's premier gents salon in Jumeirah Village Circle. Where precision meets luxury grooming.
           </p>
           <p className="text-gray-600 text-xs mb-6">
             Emerald Tower, G Floor, JVC District 18 — Dubai, UAE
@@ -35,7 +26,7 @@ export default function Footer() {
               <Instagram size={20} />
             </a>
             <a
-              href={waLink}
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -47,15 +38,15 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">{t('Navigation', 'Navegación')}</h4>
+          <h4 className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Navigation</h4>
           <ul className="space-y-3">
             {[
-              ['/services', t('Services', 'Servicios')],
-              ['/book', t('Book Appointment', 'Reservar Cita')],
-              ['/about', t('About Us', 'Nosotros')],
-              ['/gallery', t('Gallery', 'Galería')],
+              ['/services', 'Services'],
+              ['/book', 'Book Appointment'],
+              ['/about', 'About Us'],
+              ['/gallery', 'Gallery'],
               ['/faq', 'FAQ'],
-              ['/contact', t('Contact', 'Contacto')],
+              ['/contact', 'Contact'],
             ].map(([to, label]) => (
               <li key={to}>
                 <Link to={to} className="text-gray-400 hover:text-gold text-sm transition-colors">{label}</Link>
@@ -65,7 +56,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">{t('Contact', 'Contacto')}</h4>
+          <h4 className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Contact</h4>
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-gray-400 text-sm">
               <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
@@ -87,28 +78,28 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-500 text-xs hover:text-gold transition-colors"
               >
-                <ExternalLink size={12} /> {t('Get Directions', 'Cómo Llegar')}
+                <ExternalLink size={12} /> Get Directions
               </a>
             </li>
           </ul>
           <a
-            href={waLink}
+            href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 mt-6 bg-gold text-black text-sm font-semibold px-5 py-2.5 rounded hover:bg-gold-light transition-colors"
           >
             <MessageCircle size={15} />
-            {t('WhatsApp Us', 'WhatsApp')}
+            WhatsApp Us
           </a>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-gray-600 text-xs">
-          © {new Date().getFullYear()} Black Mustache Gents Salon. {t('All rights reserved.', 'Todos los derechos reservados.')}
+          © {new Date().getFullYear()} Black Mustache Gents Salon. All rights reserved.
         </p>
         <p className="text-gray-600 text-xs">
-          {t('Barber Shop Dubai | JVC | Gents Salon | Emerald Tower', 'Barber Shop Dubai | JVC | Salón de Caballeros | Emerald Tower')}
+          Barber Shop Dubai | JVC | Gents Salon | Emerald Tower
         </p>
       </div>
     </footer>
