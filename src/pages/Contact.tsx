@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Clock, MessageCircle, CheckCircle, Instagram, ExternalLink } from 'lucide-react'
 
-const WA_NUMBER = '97145896390'
+const WA_NUMBER = '971553604706'
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
 
 export default function Contact() {

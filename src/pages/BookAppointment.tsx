@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { CheckCircle, Phone, MapPin, MessageCircle, ExternalLink } from 'lucide-react'
 
-const WA_NUMBER = '97145896390'
+const WA_NUMBER = '971553604706'
 
 const services = [
   'Signature Haircut',
