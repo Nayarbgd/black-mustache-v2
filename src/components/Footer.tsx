@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Phone, MapPin, Instagram, MessageCircle, ExternalLink } from 'lucide-react'
-import logo from '/logo/logo.png'
+
+const logo = '/logo/logo.png'
 
 const WA_LINK = `https://wa.me/971553604706?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
 

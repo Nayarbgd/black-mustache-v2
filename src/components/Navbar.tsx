@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import logo from '/logo/logo.png'
+
+const logo = '/logo/logo.png'
 
 const links = [
   { to: '/', label: 'Home' },
