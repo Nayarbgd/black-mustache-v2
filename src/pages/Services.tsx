@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { Clock, ChevronRight } from 'lucide-react'
+import { Clock, ChevronRight, MessageCircle } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+
+const WA_NUMBER = '97145896390'
+const WA_EN = `https://wa.me/${WA_NUMBER}?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
+const WA_ES = `https://wa.me/${WA_NUMBER}?text=Hola%20Black%20Mustache%20Gents%20Salon%2C%0A%0AMe%20gustar%C3%ADa%20reservar%20una%20cita.%0A%0ANombre%3A%0AServicio%3A%0AFecha%3A%0AHora%3A%0A%0AGracias.`
 
 const services = [
   {
@@ -81,12 +84,13 @@ const services = [
 
 export default function Services() {
   const { lang, t } = useLanguage()
+  const waLink = lang === 'es' ? WA_ES : WA_EN
 
   return (
     <>
       <Helmet>
-        <title>Services | Black Mustache Gents Salon Dubai — Haircut, Beard, Shave</title>
-        <meta name="description" content="Explore our premium barbershop services in JVC Dubai. Haircuts, beard trims, hot towel shaves, skin fades, hair coloring, and VIP grooming packages. Starting from AED 40." />
+        <title>Services | Black Mustache Gents Salon Dubai — Haircut, Beard, Shave JVC</title>
+        <meta name="description" content="Explore premium barbershop services at Black Mustache Gents Salon, Emerald Tower JVC Dubai. Haircuts, beard trims, hot towel shaves, skin fades & VIP grooming packages from AED 40." />
         <link rel="canonical" href="https://blackmustache.ae/services" />
       </Helmet>
 
@@ -110,8 +114,8 @@ export default function Services() {
           <div className="w-16 h-0.5 bg-gold mx-auto mb-4" />
           <p className="text-gray-400 max-w-xl mx-auto">
             {t(
-              'Crafted for the modern gentleman. Each service is a ritual designed to leave you looking and feeling your absolute best.',
-              'Diseñado para el caballero moderno. Cada servicio es un ritual para que te veas y sientas en tu mejor versión.'
+              'Crafted for the modern gentleman at Emerald Tower, JVC. Each service is a ritual designed to leave you looking and feeling your absolute best.',
+              'Diseñado para el caballero moderno en Emerald Tower, JVC. Cada servicio es un ritual para que te veas y sientas en tu mejor versión.'
             )}
           </p>
         </section>
@@ -141,12 +145,15 @@ export default function Services() {
                     <Clock size={12} /> {s.duration}
                   </span>
                 </div>
-                <Link
-                  to="/book"
-                  className="mt-4 bg-gold/10 text-gold border border-gold/30 text-xs text-center py-2.5 rounded tracking-wider uppercase hover:bg-gold hover:text-black transition-all duration-300"
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center justify-center gap-1.5 bg-gold/10 text-gold border border-gold/30 text-xs py-2.5 rounded tracking-wider uppercase hover:bg-gold hover:text-black transition-all duration-300"
                 >
+                  <MessageCircle size={13} />
                   {t('Book Now', 'Reservar')}
-                </Link>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -158,11 +165,25 @@ export default function Services() {
             {t('Ready to Book?', '¿Listo Para Reservar?')}
           </h2>
           <p className="text-gray-400 mb-8 max-w-md mx-auto">
-            {t('Choose your service and pick a time that works for you.', 'Elige tu servicio y un horario que te funcione.')}
+            {t('Message us on WhatsApp and we\'ll confirm your slot in minutes.', 'Escríbenos por WhatsApp y confirmaremos tu cita en minutos.')}
           </p>
-          <Link to="/book" className="inline-flex items-center gap-2 bg-gold text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold-light transition-colors rounded">
-            {t('Book Appointment', 'Reservar Cita')} <ChevronRight size={16} />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-gold text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold-light transition-colors rounded"
+            >
+              <MessageCircle size={16} />
+              {t('Book via WhatsApp', 'Reservar por WhatsApp')}
+            </a>
+            <a
+              href="/book"
+              className="inline-flex items-center justify-center gap-2 border border-gold text-gold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold/10 transition-colors rounded"
+            >
+              {t('Online Form', 'Formulario en Línea')} <ChevronRight size={16} />
+            </a>
+          </div>
         </section>
       </div>
     </>

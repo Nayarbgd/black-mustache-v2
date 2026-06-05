@@ -7,12 +7,12 @@
     <meta name="theme-color" content="#000000" />
 
     <!-- Default SEO (overridden per page) -->
-    <title>Black Mustache Gents Salon | Premium Barber Shop in JVC Dubai</title>
-    <meta name="description" content="Black Mustache Gents Salon — Dubai's premier men's grooming experience in JVC. Expert haircuts, beard trims, hot towel shaves & VIP packages. Book your appointment today." />
+    <title>Black Mustache Gents Salon | Premium Barber Shop JVC Dubai</title>
+    <meta name="description" content="Black Mustache Gents Salon — Dubai's premier men's grooming experience in Jumeirah Village Circle. Expert haircuts, beard trims, hot towel shaves & VIP packages. Book via WhatsApp." />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Black Mustache Gents Salon | Premium Barber Shop Dubai" />
-    <meta property="og:description" content="Dubai's premier men's grooming experience in JVC. Expert haircuts, beard trims & VIP packages." />
+    <meta property="og:description" content="Dubai's premier men's grooming experience in JVC — Emerald Tower, Jumeirah Village Circle. Expert haircuts, beard trims & VIP packages." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://blackmustache.ae" />
     <meta property="og:image" content="https://blackmustache.ae/og-image.jpg" />
@@ -21,7 +21,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Black Mustache Gents Salon | Premium Barber Shop Dubai" />
-    <meta name="twitter:description" content="Dubai's premier men's grooming experience in JVC." />
+    <meta name="twitter:description" content="Dubai's premier men's grooming experience in JVC, Emerald Tower." />
     <meta name="twitter:image" content="https://blackmustache.ae/og-image.jpg" />
 
     <!-- Canonical -->
@@ -36,15 +36,16 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HairSalon",
-      "name": "Black Mustache Gents Salon | Barber Shop",
+      "@type": ["HairSalon", "BarberShop"],
+      "name": "Black Mustache Gents Salon",
       "description": "Premium men's barber shop in JVC Dubai offering haircuts, beard trims, hot towel shaves and VIP grooming packages.",
       "url": "https://blackmustache.ae",
-      "telephone": "04 589 6390",
+      "telephone": "+97145896390",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "JVC - Lazuward S W",
-        "addressLocality": "Dubai",
+        "streetAddress": "Emerald Tower, G Floor, 15/7, 8 Street, JVC District 18",
+        "addressLocality": "Jumeirah Village Circle",
+        "addressRegion": "Dubai",
         "addressCountry": "AE"
       },
       "geo": {
@@ -52,10 +53,24 @@
         "latitude": "25.0516",
         "longitude": "55.2065"
       },
-      "openingHours": "Mo-Su 09:00-22:00",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "22:00"
+        }
+      ],
       "priceRange": "$$",
       "image": "https://blackmustache.ae/og-image.jpg",
-      "sameAs": []
+      "hasMap": "https://go.2gis.com/s6ioj",
+      "sameAs": [
+        "https://www.instagram.com/black.mustache.gents.salon"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Dubai"
+      }
     }
     </script>
 
@@ -83,10 +98,18 @@
         },
         {
           "@type": "Question",
-          "name": "Where is Black Mustache located in Dubai?",
+          "name": "Where is Black Mustache Gents Salon located in Dubai?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We are located at JVC - Lazuward S W, Dubai, UAE. Easy access and parking available."
+            "text": "We are located at Emerald Tower, G Floor, JVC District 18, Jumeirah Village Circle, Dubai, UAE."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book an appointment at Black Mustache?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can book via WhatsApp at +971 4 589 6390, call us directly, or use our online booking form."
           }
         }
       ]

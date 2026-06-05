@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { Phone, Star, ChevronRight, Clock, Award, Scissors, Shield } from 'lucide-react'
+import { Phone, ChevronRight, Clock, Award, Scissors, Shield, MessageCircle, MapPin } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
-const reviews = [
-  { name: 'Ahmed K.', rating: 5, text: 'Best barber in JVC. The skin fade is immaculate every time.', date: 'Nov 2024' },
-  { name: 'Carlos M.', rating: 5, text: 'Outstanding service. The hot towel shave was an experience I keep coming back for.', date: 'Oct 2024' },
-  { name: 'Omar F.', rating: 5, text: 'Premium salon, premium results. My beard has never looked better.', date: 'Oct 2024' },
-]
+const WA_NUMBER = '97145896390'
+const WA_EN = `https://wa.me/${WA_NUMBER}?text=Hello%20Black%20Mustache%20Gents%20Salon%2C%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName%3A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0A%0AThank%20you.`
+const WA_ES = `https://wa.me/${WA_NUMBER}?text=Hola%20Black%20Mustache%20Gents%20Salon%2C%0A%0AMe%20gustar%C3%ADa%20reservar%20una%20cita.%0A%0ANombre%3A%0AServicio%3A%0AFecha%3A%0AHora%3A%0A%0AGracias.`
 
 const services = [
   { name: 'Signature Haircut', price: 'AED 60+', duration: '45 min' },
@@ -18,13 +16,14 @@ const services = [
 ]
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
+  const waLink = lang === 'es' ? WA_ES : WA_EN
 
   return (
     <>
       <Helmet>
         <title>Black Mustache Gents Salon | Premium Barber Shop JVC Dubai</title>
-        <meta name="description" content="Dubai's premier men's grooming salon in JVC. Expert haircuts, beard trims, hot towel shaves & VIP packages. Book your appointment at Black Mustache today." />
+        <meta name="description" content="Black Mustache Gents Salon — Dubai's premier men's grooming experience in Jumeirah Village Circle. Expert haircuts, beard trims, hot towel shaves & VIP packages. Book via WhatsApp." />
         <link rel="canonical" href="https://blackmustache.ae/" />
       </Helmet>
 
@@ -46,7 +45,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-gold text-sm font-semibold tracking-widest uppercase mb-6"
           >
-            {t('JVC Dubai • Premium Gents Salon', 'JVC Dubai • Salón Premium de Caballeros')}
+            {t('Jumeirah Village Circle, Dubai • Premium Gents Salon', 'Jumeirah Village Circle, Dubai • Salón Premium de Caballeros')}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -65,8 +64,8 @@ export default function Home() {
             className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10"
           >
             {t(
-              "Dubai's premium grooming experience. Walk in as a man. Walk out as a legend.",
-              'La experiencia premium de grooming en Dubai. Entra como hombre. Sal como leyenda.'
+              "Dubai's premium grooming experience at Emerald Tower, JVC. Walk in as a man. Walk out as a legend.",
+              'La experiencia premium de grooming en Dubai, Emerald Tower, JVC. Entra como hombre. Sal como leyenda.'
             )}
           </motion.p>
           <motion.div
@@ -75,53 +74,61 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link
-              to="/book"
-              className="bg-gold text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold-light transition-all duration-300 rounded"
-            >
-              {t('Book Appointment', 'Reservar Cita')}
-            </Link>
             <a
-              href="tel:045896390"
-              className="border border-gold text-gold font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold/10 transition-all duration-300 rounded flex items-center justify-center gap-2"
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-gold text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold-light transition-all duration-300 rounded"
+            >
+              <MessageCircle size={16} />
+              {t('Book via WhatsApp', 'Reservar por WhatsApp')}
+            </a>
+            <a
+              href="tel:+97145896390"
+              className="inline-flex items-center justify-center gap-2 border border-gold text-gold font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold/10 transition-all duration-300 rounded"
             >
               <Phone size={16} />
               {t('Call Now', 'Llamar Ahora')}
             </a>
           </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-6 text-gray-600 text-xs flex items-center justify-center gap-1.5"
+          >
+            <MapPin size={12} className="text-gold/50" />
+            Emerald Tower, G Floor, JVC District 18, Jumeirah Village Circle, Dubai
+          </motion.p>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronRight size={24} className="text-gold/50 rotate-90" />
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="bg-charcoal py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex justify-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) => <Star key={i} size={20} className="text-gold fill-gold" />)}
-            </div>
-            <p className="text-gray-400 text-sm">{t('5.0 Rating • 200+ Happy Clients', 'Calificación 5.0 • 200+ Clientes Satisfechos')}</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {reviews.map((r) => (
-              <motion.div
-                key={r.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-black border border-gold/20 p-6 rounded"
-              >
-                <div className="flex gap-1 mb-3">
-                  {[...Array(r.rating)].map((_, i) => <Star key={i} size={14} className="text-gold fill-gold" />)}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">"{r.text}"</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-gold text-sm font-semibold">{r.name}</span>
-                  <span className="text-gray-600 text-xs">{r.date}</span>
-                </div>
-              </motion.div>
+      {/* Social Proof / Credibility */}
+      <section className="bg-charcoal py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-gold text-xs tracking-widest uppercase mb-3">{t('Trusted by Dubai Gentlemen', 'La Confianza de los Caballeros de Dubai')}</p>
+          <h2 className="font-serif text-2xl md:text-3xl text-white mb-4">
+            {t('Professional Grooming in the Heart of JVC', 'Grooming Profesional en el Corazón de JVC')}
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed mb-10">
+            {t(
+              'Professional grooming, premium service, and attention to detail inside Emerald Tower, Jumeirah Village Circle. Your go-to barber shop for every occasion.',
+              'Grooming profesional, servicio premium y atención al detalle en Emerald Tower, Jumeirah Village Circle. Tu barbería de confianza para cada ocasión.'
+            )}
+          </p>
+          <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto">
+            {[
+              { value: '200+', label: t('Happy Clients', 'Clientes Felices') },
+              { value: '8+', label: t('Services Offered', 'Servicios Ofrecidos') },
+              { value: '7', label: t('Days a Week', 'Días a la Semana') },
+            ].map(({ value, label }) => (
+              <div key={label} className="text-center">
+                <p className="font-serif text-3xl text-gold font-bold">{value}</p>
+                <p className="text-gray-500 text-xs mt-1">{label}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -193,21 +200,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Final CTA */}
       <section className="bg-gold py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-black font-bold mb-4">
             {t('Ready to Elevate Your Look?', '¿Listo Para Elevar Tu Imagen?')}
           </h2>
-          <p className="text-black/70 mb-8">
-            {t('Book your appointment today and experience Dubai\'s finest grooming.', 'Reserva tu cita hoy y experimenta el mejor grooming de Dubai.')}
+          <p className="text-black/70 mb-2">
+            {t("Book your appointment today and experience Dubai's finest grooming.", 'Reserva tu cita hoy y experimenta el mejor grooming de Dubai.')}
+          </p>
+          <p className="text-black/50 text-sm mb-8 flex items-center justify-center gap-1.5">
+            <MapPin size={13} />
+            Emerald Tower, G Floor, JVC District 18, Dubai
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book" className="bg-black text-gold font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-charcoal transition-colors rounded">
-              {t('Book Appointment', 'Reservar Cita')}
-            </Link>
-            <a href="tel:045896390" className="border border-black text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-black/10 transition-colors rounded flex items-center justify-center gap-2">
-              <Phone size={16} /> 04 589 6390
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-black text-gold font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-charcoal transition-colors rounded"
+            >
+              <MessageCircle size={16} />
+              {t('Book via WhatsApp', 'Reservar por WhatsApp')}
+            </a>
+            <a
+              href="tel:+97145896390"
+              className="inline-flex items-center justify-center gap-2 border border-black text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-black/10 transition-colors rounded"
+            >
+              <Phone size={16} /> +971 4 589 6390
             </a>
           </div>
         </div>

@@ -1,0 +1,223 @@
+Integrate the following verified business information throughout the website where appropriate.
+
+IMPORTANT:
+
+Do not redesign the website.
+
+Do not change the visual identity.
+
+Do not modify the luxury aesthetic.
+
+Only improve business credibility, contact functionality, local SEO, and conversion optimization.
+
+---
+
+BUSINESS INFORMATION
+
+Business Name:
+
+Black Mustache Gents Salon
+
+Instagram:
+
+@black.mustache.gents.salon
+
+Location:
+
+Emerald Tower
+15/7, 8 Street
+G Floor
+JVC District 18
+Jumeirah Village Circle
+Dubai
+United Arab Emirates
+
+Google Maps:
+
+https://go.2gis.com/s6ioj
+
+Phone:
+
++971 4 589 6390
+
+WhatsApp:
+
+Use the same number for WhatsApp actions.
+
+---
+
+CONTACT INTEGRATION
+
+Update all contact-related sections.
+
+Every "Book Appointment" button must work.
+
+Every "Call Now" button must work.
+
+Every WhatsApp button must work.
+
+Create proper click actions:
+
+tel:+97145896390
+
+WhatsApp booking link using:
+
+https://wa.me/97145896390
+
+---
+
+WHATSAPP BOOKING MESSAGE
+
+When users click any booking button, pre-fill WhatsApp with:
+
+Hello Black Mustache Gents Salon,
+
+I would like to book an appointment.
+
+Name:
+Service:
+Preferred Date:
+Preferred Time:
+
+Thank you.
+
+Spanish version:
+
+Hola Black Mustache Gents Salon,
+
+Me gustaría reservar una cita.
+
+Nombre:
+Servicio:
+Fecha:
+Hora:
+
+Gracias.
+
+The website must automatically use the correct language depending on the selected language.
+
+---
+
+LOCAL SEO IMPROVEMENTS
+
+Update LocalBusiness schema.
+
+Include:
+
+Business Name:
+Black Mustache Gents Salon
+
+Address:
+Emerald Tower, G Floor, JVC District 18, Jumeirah Village Circle, Dubai, UAE
+
+Phone:
++97145896390
+
+Google Maps URL
+
+Instagram profile
+
+Opening hours placeholder (easy to update later)
+
+Service area:
+Dubai
+
+Business type:
+Barber Shop
+Gents Salon
+
+---
+
+CONTACT PAGE
+
+Improve the contact page with:
+
+Address card
+
+Phone card
+
+WhatsApp card
+
+Google Maps button
+
+Get Directions button
+
+Call Now button
+
+All fully functional.
+
+---
+
+FOOTER
+
+Add:
+
+Phone number
+
+Dubai location
+
+Quick WhatsApp contact
+
+Google Maps link
+
+Instagram link
+
+---
+
+SOCIAL PROOF SECTION
+
+Create a small credibility block using existing business positioning.
+
+Suggested headline:
+
+Trusted by Dubai Gentlemen
+
+Suggested text:
+
+Professional grooming, premium service, and attention to detail in the heart of Jumeirah Village Circle.
+
+Do not invent reviews.
+
+Do not invent ratings.
+
+---
+
+ABOUT PAGE
+
+Naturally incorporate:
+
+JVC location
+
+Professional grooming expertise
+
+Premium customer experience
+
+Convenient location inside Emerald Tower
+
+---
+
+BOOKING PAGE
+
+Display:
+
+Phone number
+
+WhatsApp shortcut
+
+Location
+
+Google Maps button
+
+Appointment confirmation notice
+
+---
+
+FINAL REPORT
+
+After implementation provide:
+
+1. Files modified
+2. Contact integrations completed
+3. WhatsApp integrations completed
+4. Local SEO updates completed
+5. Any missing business information that would further improve conversion

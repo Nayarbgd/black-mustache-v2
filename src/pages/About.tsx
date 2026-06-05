@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Heart, Target, Star } from 'lucide-react'
+import { Heart, Target, Star, MapPin } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 
 export default function About() {
@@ -11,7 +11,7 @@ export default function About() {
     <>
       <Helmet>
         <title>About Us | Black Mustache Gents Salon — Premium Barber JVC Dubai</title>
-        <meta name="description" content="Learn about Black Mustache Gents Salon — Dubai's premier men's grooming destination in JVC. Our story, mission, and the expert team behind your transformation." />
+        <meta name="description" content="Learn about Black Mustache Gents Salon — Dubai's premier men's grooming destination inside Emerald Tower, Jumeirah Village Circle. Expert barbers, premium experience." />
         <link rel="canonical" href="https://blackmustache.ae/about" />
       </Helmet>
 
@@ -34,11 +34,15 @@ export default function About() {
               {t('About ', 'Sobre ')}<span className="text-gold">Black Mustache</span>
             </motion.h1>
             <div className="w-16 h-0.5 bg-gold mx-auto mb-6" />
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-lg mb-4">
               {t(
                 "Born from a passion for precision and a commitment to craft, Black Mustache Gents Salon was created for the modern Dubai gentleman who demands nothing but the best.",
                 "Nacido de la pasión por la precisión y el compromiso con el oficio, Black Mustache Gents Salon fue creado para el caballero moderno de Dubai que exige lo mejor."
               )}
+            </p>
+            <p className="flex items-center justify-center gap-2 text-gold/70 text-sm">
+              <MapPin size={14} />
+              Emerald Tower, G Floor, JVC District 18, Jumeirah Village Circle, Dubai
             </p>
           </div>
         </section>
@@ -64,8 +68,8 @@ export default function About() {
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
                   {t(
-                    "Nestled in the heart of JVC, Dubai, our salon is more than just a place to get a haircut. It's a sanctuary for men who understand that how you present yourself matters.",
-                    "Ubicado en el corazón de JVC, Dubai, nuestro salón es más que un lugar para cortarse el pelo. Es un santuario para los hombres que entienden que la presentación importa."
+                    "Located inside Emerald Tower, G Floor, JVC District 18, Jumeirah Village Circle — our salon is more than just a place to get a haircut. It's a sanctuary for men who understand that how you present yourself matters.",
+                    "Ubicado en el interior de Emerald Tower, Planta Baja, Distrito JVC 18, Jumeirah Village Circle — nuestro salón es más que un lugar para cortarse el pelo. Es un santuario para hombres que entienden que la presentación importa."
                   )}
                 </p>
                 <p>
@@ -76,10 +80,31 @@ export default function About() {
                 </p>
                 <p>
                   {t(
-                    "From the moment you walk through our doors, every detail — the music, the atmosphere, the tools, the products — is curated to deliver an exceptional experience.",
-                    "Desde el momento en que entras por nuestras puertas, cada detalle — la música, el ambiente, las herramientas, los productos — está diseñado para ofrecer una experiencia excepcional."
+                    "From the moment you walk through our doors at Emerald Tower, every detail — the music, the atmosphere, the tools, the products — is curated to deliver an exceptional experience.",
+                    "Desde el momento en que entras por nuestras puertas en Emerald Tower, cada detalle — la música, el ambiente, las herramientas, los productos — está diseñado para ofrecer una experiencia excepcional."
                   )}
                 </p>
+              </div>
+
+              {/* Address card */}
+              <div className="mt-8 bg-charcoal border border-gold/20 rounded p-5 flex items-start gap-3">
+                <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-white text-sm font-medium mb-1">Black Mustache Gents Salon</p>
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    Emerald Tower, G Floor, 15/7, 8 Street<br />
+                    JVC District 18, Jumeirah Village Circle<br />
+                    Dubai, United Arab Emirates
+                  </p>
+                  <a
+                    href="https://go.2gis.com/s6ioj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-gold text-xs hover:underline"
+                  >
+                    {t('Get Directions', 'Cómo Llegar')} →
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -100,8 +125,8 @@ export default function About() {
                   icon: Target,
                   title: t('Our Mission', 'Nuestra Misión'),
                   text: t(
-                    "To redefine men's grooming in Dubai. We don't just cut hair — we build confidence, one appointment at a time.",
-                    "Redefinir el grooming masculino en Dubai. No solo cortamos cabello — construimos confianza, una cita a la vez."
+                    "To redefine men's grooming in Dubai. We don't just cut hair — we build confidence, one appointment at a time, at the heart of Jumeirah Village Circle.",
+                    "Redefinir el grooming masculino en Dubai. No solo cortamos cabello — construimos confianza, una cita a la vez, en el corazón de Jumeirah Village Circle."
                   ),
                 },
                 {
@@ -145,7 +170,10 @@ export default function About() {
             {t('Experience the Difference', 'Experimenta la Diferencia')}
           </h2>
           <p className="text-gray-400 mb-8 max-w-md mx-auto">
-            {t('Join hundreds of satisfied clients and discover what premium grooming truly means.', 'Únete a cientos de clientes satisfechos y descubre lo que el grooming premium realmente significa.')}
+            {t(
+              'Visit us at Emerald Tower, JVC and discover what premium grooming truly means.',
+              'Visítanos en Emerald Tower, JVC y descubre lo que el grooming premium realmente significa.'
+            )}
           </p>
           <Link to="/book" className="inline-block bg-gold text-black font-bold px-8 py-4 text-sm tracking-widest uppercase hover:bg-gold-light transition-colors rounded">
             {t('Book Your Visit', 'Reservar Tu Visita')}
