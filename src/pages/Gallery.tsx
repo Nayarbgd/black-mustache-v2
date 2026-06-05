@@ -82,7 +82,7 @@ export default function Gallery() {
             >
               <Instagram size={26} className="text-gold group-hover:scale-110 transition-transform duration-300" />
               <div className="text-left">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Follow us on</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-0.5">See more work</p>
                 <p className="text-white group-hover:text-gold transition-colors duration-300 font-medium tracking-wide">@black.mustache.gents.salon</p>
               </div>
             </a>
