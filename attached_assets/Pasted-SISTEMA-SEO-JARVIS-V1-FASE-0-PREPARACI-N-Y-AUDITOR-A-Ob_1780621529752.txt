@@ -1,0 +1,178 @@
+SISTEMA SEO JARVIS V1
+
+FASE 0 — PREPARACIÓN Y AUDITORÍA
+
+Objetivo:
+Entender el estado actual de la web antes de tocar nada.
+
+Verificar:
+
+* Indexabilidad
+* Arquitectura actual
+* Meta tags
+* Sitemap
+* Robots.txt
+* Schema
+* Core Web Vitals
+* Mobile usability
+* Accesibilidad
+* Imágenes
+* SEO local
+* Canibalización
+* URLs
+
+Entregable:
+
+* Puntuación SEO estimada
+* Lista priorizada de problemas
+* Plan de implementación
+
+---
+
+FASE 1 — FUNDAMENTOS SEO
+
+Objetivo:
+Resolver el 80% de los problemas SEO con el menor esfuerzo.
+
+Implementar:
+
+* Titles únicos
+* Meta descriptions
+* Open Graph
+* Twitter Cards
+* Robots.txt
+* Sitemap.xml
+* Canonicals
+* LocalBusiness Schema
+* FAQ Schema
+* Aggregate Rating Schema
+* SEO Head por página
+
+No modificar diseño.
+
+Resultado esperado:
+
+SEO Score:
+60 → 80+
+
+---
+
+FASE 2 — INDEXACIÓN Y CRAWLABILITY
+
+Objetivo:
+Ayudar a Google a entender y recorrer el sitio.
+
+Implementar:
+
+* Alt text
+* Imágenes indexables
+* Internal linking
+* Footer links
+* Breadcrumbs
+* Canonicals avanzados
+* Optimización de navegación
+* Accesibilidad SEO
+* Aria labels
+* Lazy loading
+* Image preload
+* Preconnect
+
+No modificar diseño.
+
+Resultado esperado:
+
+SEO Score:
+80 → 88+
+
+---
+
+FASE 3 — SEO LOCAL Y AUTORIDAD
+
+Objetivo:
+Dominar búsquedas locales.
+
+Implementar:
+
+* City pages
+* Service pages
+* Geo-targeted landing pages
+* Service Area Schema
+* NAP consistency
+* Google Business Profile optimization
+* Review strategy
+* Local citations
+
+Ejemplos:
+
+/airport-transfer-dubai
+
+/private-driver-dubai
+
+/chauffeur-dubai-airport
+
+/dubai-to-abu-dhabi-driver
+
+Resultado esperado:
+
+SEO Score:
+88 → 93+
+
+---
+
+FASE 4 — PERFORMANCE Y CORE WEB VITALS
+
+Objetivo:
+Mejorar velocidad y experiencia.
+
+Implementar:
+
+* WebP
+* AVIF
+* Responsive images
+* LCP optimization
+* CLS reduction
+* JS optimization
+* Code splitting
+* Font optimization
+* Cache strategy
+* Bundle analysis
+
+Resultado esperado:
+
+SEO Score:
+93 → 96+
+
+---
+
+FASE 5 — SEO DE ESCALADO
+
+Objetivo:
+Crear activos que generen tráfico continuo.
+
+Implementar:
+
+* Blog SEO
+* Programmatic SEO
+* Topic clusters
+* Pillar pages
+* Link building strategy
+* Content hubs
+* Advanced schema
+* Conversion SEO
+
+Resultado esperado:
+
+SEO Score:
+96 → 100
+
+---
+
+REGLA GENERAL
+
+Antes de pasar a la siguiente fase:
+
+1. Implementar.
+2. Generar reporte.
+3. Verificar que no se rompió diseño.
+4. Medir impacto.
+5. Pasar a la siguiente fase.
