@@ -54,7 +54,7 @@ export default function Contact() {
                   Jumeirah Village Circle<br />
                   Dubai, UAE
                 </p>
-                <a href="https://go.2gis.com/s6ioj" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-3 text-gold text-xs hover:underline">
+                <a href="https://www.google.com/maps/search/?api=1&query=Emerald+Tower+JVC+District+18+Jumeirah+Village+Circle+Dubai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-3 text-gold text-xs hover:underline">
                   <ExternalLink size={11} /> Get Directions
                 </a>
               </motion.div>
@@ -106,7 +106,7 @@ export default function Contact() {
                   <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-gold text-black px-4 py-3 text-sm rounded hover:bg-gold-light transition-colors font-bold">
                     <MessageCircle size={15} /> WhatsApp
                   </a>
-                  <a href="https://go.2gis.com/s6ioj" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-gold/30 text-gray-400 px-4 py-3 text-sm rounded hover:border-gold/60 hover:text-gold transition-colors col-span-2">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Emerald+Tower+JVC+District+18+Jumeirah+Village+Circle+Dubai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-gold/30 text-gray-400 px-4 py-3 text-sm rounded hover:border-gold/60 hover:text-gold transition-colors col-span-2">
                     <ExternalLink size={15} /> Get Directions on Maps
                   </a>
                   <a href="https://www.instagram.com/black.mustache.gents.salon" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border border-gold/20 text-gray-500 px-4 py-3 text-sm rounded hover:border-gold/40 hover:text-gold transition-colors col-span-2">
