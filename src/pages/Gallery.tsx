@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, Instagram } from 'lucide-react'
 
 const images = [
   { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', alt: 'Premium haircut at Black Mustache Dubai' },
@@ -66,6 +66,27 @@ export default function Gallery() {
               </AnimatePresence>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mt-14"
+          >
+            <a
+              href="https://www.instagram.com/black.mustache.gents.salon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 border border-gold/30 hover:border-gold px-8 py-4 rounded transition-all duration-300 hover:bg-gold/5"
+            >
+              <Instagram size={26} className="text-gold group-hover:scale-110 transition-transform duration-300" />
+              <div className="text-left">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-0.5">Síguenos en</p>
+                <p className="text-white group-hover:text-gold transition-colors duration-300 font-medium tracking-wide">@black.mustache.gents.salon</p>
+              </div>
+            </a>
+          </motion.div>
         </section>
       </div>
 
