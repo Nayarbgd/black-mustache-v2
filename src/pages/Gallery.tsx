@@ -1,0 +1,149 @@
+import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
+
+const images = [
+  { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', category: 'haircut', alt: 'Premium haircut at Black Mustache Dubai' },
+  { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', category: 'beard', alt: 'Expert beard grooming in JVC Dubai' },
+  { src: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80', category: 'interior', alt: 'Black Mustache Salon interior JVC' },
+  { src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80', category: 'haircut', alt: 'Skin fade haircut Dubai barbershop' },
+  { src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80', category: 'beard', alt: 'Beard trim and shape at Black Mustache' },
+  { src: 'https://images.unsplash.com/photo-1517832606299-7ae9b720a9b4?w=800&q=80', category: 'interior', alt: 'Premium barber shop setup Dubai' },
+  { src: 'https://images.unsplash.com/photo-1634839568960-d3d6f63bbfe0?w=800&q=80', category: 'transformation', alt: 'Hair transformation at Black Mustache Dubai' },
+  { src: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=80', category: 'haircut', alt: 'Classic haircut gents salon Dubai' },
+  { src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80', category: 'beard', alt: 'Hot towel shave premium barbershop' },
+]
+
+const categories = ['all', 'haircut', 'beard', 'interior', 'transformation']
+
+export default function Gallery() {
+  const { t } = useLanguage()
+  const [activeCategory, setActiveCategory] = useState('all')
+  const [lightbox, setLightbox] = useState<number | null>(null)
+
+  const filtered = activeCategory === 'all' ? images : images.filter(i => i.category === activeCategory)
+
+  const navigate = (dir: 1 | -1) => {
+    if (lightbox === null) return
+    const newIdx = (lightbox + dir + filtered.length) % filtered.length
+    setLightbox(newIdx)
+  }
+
+  const categoryLabel = (c: string) => {
+    const map: Record<string, [string, string]> = {
+      all: ['All', 'Todos'],
+      haircut: ['Haircuts', 'Cortes'],
+      beard: ['Beard Work', 'Barba'],
+      interior: ['Salon', 'Salón'],
+      transformation: ['Transformations', 'Transformaciones'],
+    }
+    return t(map[c][0], map[c][1])
+  }
+
+  return (
+    <>
+      <Helmet>
+        <title>Gallery | Black Mustache Gents Salon — Haircuts & Transformations Dubai</title>
+        <meta name="description" content="Browse our gallery of premium haircuts, beard work, and grooming transformations at Black Mustache Gents Salon in JVC Dubai. See the results for yourself." />
+        <link rel="canonical" href="https://blackmustache.ae/gallery" />
+      </Helmet>
+
+      <div className="pt-20">
+        <section className="bg-charcoal py-20 px-4 text-center">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gold text-xs tracking-widest uppercase mb-3">
+            {t('Our Work', 'Nuestro Trabajo')}
+          </motion.p>
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-serif text-4xl md:text-5xl text-white mb-4">
+            {t('The ', 'La ')}<span className="text-gold">{t('Gallery', 'Galería')}</span>
+          </motion.h1>
+          <div className="w-16 h-0.5 bg-gold mx-auto" />
+        </section>
+
+        <section className="bg-black py-12 px-4">
+          <div className="max-w-7xl mx-auto">
+            {/* Filter tabs */}
+            <div className="flex gap-3 flex-wrap justify-center mb-10">
+              {categories.map(c => (
+                <button
+                  key={c}
+                  onClick={() => setActiveCategory(c)}
+                  className={`px-5 py-2 text-xs tracking-widest uppercase rounded border transition-all duration-300 ${
+                    activeCategory === c
+                      ? 'bg-gold text-black border-gold font-bold'
+                      : 'border-gold/30 text-gray-400 hover:border-gold/60 hover:text-gold'
+                  }`}
+                >
+                  {categoryLabel(c)}
+                </button>
+              ))}
+            </div>
+
+            {/* Grid */}
+            <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <AnimatePresence>
+                {filtered.map((img, i) => (
+                  <motion.div
+                    key={img.src}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    onClick={() => setLightbox(i)}
+                    className="cursor-pointer overflow-hidden rounded group aspect-square bg-charcoal"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <button className="absolute top-4 right-4 text-white hover:text-gold" onClick={() => setLightbox(null)}>
+              <X size={32} />
+            </button>
+            <button
+              className="absolute left-4 text-white hover:text-gold p-2"
+              onClick={(e) => { e.stopPropagation(); navigate(-1) }}
+            >
+              <ChevronLeft size={40} />
+            </button>
+            <motion.img
+              key={lightbox}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              src={filtered[lightbox].src}
+              alt={filtered[lightbox].alt}
+              className="max-w-3xl w-full max-h-[85vh] object-contain rounded"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              className="absolute right-4 text-white hover:text-gold p-2"
+              onClick={(e) => { e.stopPropagation(); navigate(1) }}
+            >
+              <ChevronRight size={40} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}

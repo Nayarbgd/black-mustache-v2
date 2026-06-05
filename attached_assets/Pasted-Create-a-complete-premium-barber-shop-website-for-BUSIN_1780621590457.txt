@@ -1,0 +1,305 @@
+Create a complete premium barber shop website for:
+
+BUSINESS NAME:
+Black Mustache Gents Salon | Barber Shop
+
+LOCATION:
+JVC - Lazuward S W, Dubai, UAE
+
+PHONE:
+04 589 6390
+
+BUSINESS TYPE:
+Modern premium men's barber shop in Dubai.
+
+IMPORTANT:
+This is NOT a simple landing page.
+
+Build a complete multi-page website with modern UX, high-converting copywriting, local SEO structure, appointment booking flow, luxury design, and mobile-first responsiveness.
+
+The website must feel like a premium Dubai grooming brand.
+
+DO NOT create a generic template.
+
+The final result should look like something a real business would proudly use.
+
+---
+
+DESIGN STYLE
+
+Create a modern luxury aesthetic.
+
+Visual inspiration:
+
+* Premium men's grooming brands
+* High-end Dubai businesses
+* Modern barbershop experience
+* Clean dark theme
+* Elegant gold accents
+* Premium typography
+* Cinematic imagery
+* Smooth animations
+* Fast loading
+
+Color palette:
+
+Primary:
+Black
+
+Secondary:
+Dark charcoal
+
+Accent:
+Luxury gold
+
+CTA color:
+Gold with high contrast
+
+The website must look exceptional on mobile devices.
+
+Mobile experience is a top priority.
+
+---
+
+WEBSITE STRUCTURE
+
+Create the following pages:
+
+1. HOME
+2. SERVICES
+3. BOOK APPOINTMENT
+4. ABOUT US
+5. GALLERY
+6. FAQ
+7. CONTACT
+
+Each page must have its own route and navigation link.
+
+---
+
+HOME PAGE
+
+Hero section:
+
+Strong headline.
+
+Examples of positioning:
+
+"Dubai's Premium Grooming Experience"
+
+or
+
+"More Than A Haircut. A Statement."
+
+Subheadline:
+
+Focus on confidence, style, professionalism and convenience.
+
+Primary CTA:
+
+Book Appointment
+
+Secondary CTA:
+
+Call Now
+
+Include:
+
+* Reviews section
+* Why choose us section
+* Popular services
+* Gallery preview
+* Process section
+* FAQ preview
+* Strong closing CTA
+
+---
+
+SERVICES PAGE
+
+Create premium service cards.
+
+Example services:
+
+* Haircut
+* Beard Trim
+* Hair + Beard Combo
+* Skin Fade
+* Hot Towel Shave
+* Hair Coloring
+* Kids Haircut
+* VIP Grooming Package
+
+Each service should include:
+
+* Description
+* Estimated duration
+* Starting price
+* CTA button
+
+Use professional sales copy.
+
+---
+
+BOOK APPOINTMENT PAGE
+
+This is a major conversion page.
+
+Create a booking form with:
+
+* Full Name
+* Phone Number
+* Email
+* Service
+* Preferred Barber
+* Date Picker
+* Time Picker
+* Notes
+
+After submission:
+
+Generate a pre-filled WhatsApp message.
+
+The form should automatically open WhatsApp with all appointment information included.
+
+Show confirmation message:
+
+"We have received your appointment request and will confirm your booking shortly."
+
+Create English and Spanish versions.
+
+---
+
+ABOUT PAGE
+
+Tell the story of the salon.
+
+Create premium copy focused on:
+
+* Expertise
+* Customer experience
+* Professionalism
+* Hygiene
+* Quality service
+
+Include:
+
+* Mission
+* Values
+* Team section
+
+---
+
+GALLERY PAGE
+
+Create a modern gallery.
+
+Include:
+
+* Haircuts
+* Beard work
+* Salon interior
+* Customer transformations
+
+Use lightbox functionality.
+
+---
+
+FAQ PAGE
+
+Include common customer questions such as:
+
+* Do I need an appointment?
+* How long does a haircut take?
+* Do you accept walk-ins?
+* What payment methods do you accept?
+* Is parking available?
+* What are your opening hours?
+
+---
+
+CONTACT PAGE
+
+Display:
+
+Business Name:
+Black Mustache Gents Salon
+
+Address:
+JVC - Lazuward S W - Dubai
+
+Phone:
+04 589 6390
+
+Include:
+
+* Google Maps section
+* Call button
+* WhatsApp button
+* Contact form
+
+---
+
+SEO REQUIREMENTS
+
+Implement from the beginning:
+
+* Unique title tags
+* Meta descriptions
+* Open Graph
+* Twitter Cards
+* Canonical URLs
+* LocalBusiness Schema
+* FAQ Schema
+* Sitemap.xml
+* Robots.txt
+
+Target keywords:
+
+* Barber Shop Dubai
+* Barber JVC Dubai
+* Men's Haircut Dubai
+* Beard Trim Dubai
+* Gents Salon Dubai
+* Barbershop JVC
+
+---
+
+PERFORMANCE
+
+Must achieve:
+
+* Mobile-first design
+* Responsive on all devices
+* Fast loading
+* Optimized images
+* Smooth animations
+* Accessibility best practices
+
+---
+
+LANGUAGES
+
+Implement language selector.
+
+Languages:
+
+* English
+* Spanish
+
+All content must switch dynamically.
+
+When Spanish is selected:
+
+* Navigation
+* Buttons
+* Forms
+* WhatsApp booking messages
+
+must automatically appear in Spanish.
+
+---
+
+FINAL GOAL
+
+Create a website that feels like a premium Dubai grooming brand, converts visitors into appointments, works perfectly on mobile devices, and is ready for deployment on Vercel.
