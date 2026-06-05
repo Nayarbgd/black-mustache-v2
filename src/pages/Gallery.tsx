@@ -6,13 +6,12 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 const images = [
   { src: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80', category: 'haircut', alt: 'Premium haircut at Black Mustache Dubai' },
   { src: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', category: 'beard', alt: 'Expert beard grooming in JVC Dubai' },
-  { src: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80', category: 'interior', alt: 'Black Mustache Salon interior JVC' },
   { src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80', category: 'haircut', alt: 'Skin fade haircut Dubai barbershop' },
   { src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80', category: 'beard', alt: 'Beard trim and shape at Black Mustache' },
-  { src: 'https://images.unsplash.com/photo-1517832606299-7ae9b720a9b4?w=800&q=80', category: 'interior', alt: 'Premium barber shop setup Dubai' },
-  { src: 'https://images.unsplash.com/photo-1634839568960-d3d6f63bbfe0?w=800&q=80', category: 'transformation', alt: 'Hair transformation at Black Mustache Dubai' },
-  { src: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=80', category: 'haircut', alt: 'Classic haircut gents salon Dubai' },
   { src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&q=80', category: 'beard', alt: 'Hot towel shave premium barbershop' },
+  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636127/Gemini_Generated_Image_hc7kwehc7kwehc7k_ehso6l.png', category: 'interior', alt: 'Black Mustache Gents Salon ambience Dubai' },
+  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636103/2026-06-05_06h50_46_p7jkfy.png', category: 'haircut', alt: 'Premium haircut service at Black Mustache JVC' },
+  { src: 'https://res.cloudinary.com/djepsudop/image/upload/v1780636105/2026-06-05_06h51_34_ydsj7f.png', category: 'transformation', alt: 'Grooming transformation at Black Mustache Dubai' },
 ]
 
 const categories = [
@@ -81,14 +80,16 @@ export default function Gallery() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     onClick={() => setLightbox(i)}
-                    className="cursor-pointer overflow-hidden rounded group aspect-square bg-charcoal"
+                    className="cursor-pointer overflow-hidden rounded group aspect-square bg-charcoal relative"
                   >
                     <img
                       src={img.src}
                       alt={img.alt}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      style={{ filter: 'brightness(0.82) contrast(1.08) saturate(0.75) sepia(0.18)' }}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none group-hover:from-black/30 transition-all duration-500" />
                   </motion.div>
                 ))}
               </AnimatePresence>
