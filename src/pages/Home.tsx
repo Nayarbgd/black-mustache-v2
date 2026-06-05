@@ -40,9 +40,9 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-6"
           >
-            More Than A Haircut.
+            Walk In Confident.
             <br />
-            <span className="text-gold">A Statement.</span>
+            <span className="text-gold">Leave Unstoppable.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
